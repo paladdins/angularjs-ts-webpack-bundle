@@ -1,0 +1,62 @@
+
+<a ui-sref="home">
+    Home
+</a>
+<md-content ng-class="$ctrl.isShownClass ? 'show' : 'hide'">
+    <md-list flex>
+        <md-list-item class="md-3-line">
+          <img 
+            ng-src="https://storage.aggregion.com/api/files/{{$ctrl.book.cover}}/shared/data" 
+            err-src="https://storage.aggregion.com/api/files/12ce171be47031a58f6d12ddefca93d52bda709b1b720d50cf48747d6cd44cb6/shared/data"
+          />
+        </md-list-item>
+        <md-list-item class="md-3-line">
+          <h2>
+              {{$ctrl.book.title.default}}
+          </h2>
+        </md-list-item>
+        <md-list-item class="md-3-line">
+            <p>
+                <b>ID: {{$ctrl.book.id}}</b>
+            </p>
+        </md-list-item>
+        <md-list-item class="md-3-line">
+            <p>
+                <b>Publishing status: {{$ctrl.book.publishingStatus}}</b>
+            </p>
+        </md-list-item>
+        <md-list-item class="md-3-line">
+            <p>
+                <b>Publisher(s): {{$ctrl.book.options.Publisher || 'unknown'}}</b>
+            </p>
+        </md-list-item>
+        <md-list-item class="md-3-line">
+            <p>
+                <b>Author(s): {{$ctrl.book.options.authors}}</b>
+            </p>
+        </md-list-item>
+        <md-list-item class="md-3-line">
+            <p>
+                <b>ISBN: {{$ctrl.book.options.ISBN || 'unknown'}}</b>
+            </p>
+        </md-list-item>
+        <md-list-item class="md-3-line">
+          <p>
+              <b>Description:</b> {{$ctrl.book.description.default}}
+          </p>
+        </md-list-item>
+
+
+        <md-list-item class="md-3-line">
+            <b>Bundles:</b>
+            <div ng-repeat="bundle in $ctrl.bundles">
+
+                <img 
+                    ng-src="https://storage.aggregion.com/api/files/{{bundle.resourceId}}/shared/data"
+                    check-src
+                >
+            </div>
+            
+        </md-list-item>
+    </md-list>
+</md-content>

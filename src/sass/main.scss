@@ -1,0 +1,17 @@
+@import "vars";
+
+// There is custom style code
+// ==========================================================
+
+.home-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+
+@import "media"; // Always bottom

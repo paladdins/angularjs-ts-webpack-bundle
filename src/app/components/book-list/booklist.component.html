@@ -1,0 +1,39 @@
+
+<a ui-sref="home">
+    Home
+</a>
+<div ng-class="$ctrl.isShownClass ? 'show' : 'hide'" class="booklist-container">
+
+    <md-grid-list
+        md-cols-xs="1" 
+        md-cols-sm="2" 
+        md-cols-md="4" 
+        md-cols-gt-md="4"
+        md-row-height-gt-md="0.5:0.5" 
+        md-row-height="1.5:1.5"
+        md-gutter="20px" 
+        md-gutter-gt-sm="8px"
+    >
+            <md-grid-tile 
+                    ng-repeat="book in $ctrl.books"
+                    class="gray"
+                    md-rowspan="2" 
+                    md-colspan="1" 
+                    md-colspan-sm="1" 
+                    md-colspan-xs="1"
+                >
+            <a ui-sref="booksdetail({id: book.id})">
+                <img 
+                    ng-src="https://storage.aggregion.com/api/files/{{book.cover}}/shared/data"
+                    err-src="https://storage.aggregion.com/api/files/12ce171be47031a58f6d12ddefca93d52bda709b1b720d50cf48747d6cd44cb6/shared/data"
+                > 
+
+                <md-grid-tile-footer>
+                    <h3>{{book.title.default}}</h3>
+                </md-grid-tile-footer>
+            </a>
+        </md-grid-tile>
+
+    </md-grid-list>
+
+</div>

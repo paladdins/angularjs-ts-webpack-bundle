@@ -1,0 +1,11 @@
+md-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .inner {
+        text-align: center;
+        .error-msg{
+            font-size: 60px
+        }
+    }
+}

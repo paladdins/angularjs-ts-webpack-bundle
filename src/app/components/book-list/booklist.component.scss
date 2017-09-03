@@ -1,0 +1,49 @@
+
+body{
+    padding: 20px;
+}
+
+.booklist-container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    &.hide {
+        display: none;
+    }
+    &.show {
+        display: block;
+    }
+    figure {
+        flex-direction: column !important;
+        justify-content: baseline !important;
+        margin-left: 10px;
+        margin-right: 10px;
+        a {
+            transition: .2s ease-out;
+            transform: scale(1);
+            text-decoration: none !important;
+            display: block;
+            width: 100%;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }   
+        
+        img {
+            width: 100%;
+        }
+        md-grid-tile-footer {
+            background-color: transparent;
+            margin-top: 15px;
+            position: static;
+            height: auto;
+            color: #555;
+            line-height: 23px;
+            h3 {
+                font-size: 15px;
+            }
+        }
+    }
+}

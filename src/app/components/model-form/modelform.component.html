@@ -1,0 +1,44 @@
+
+<a ui-sref="home">
+    Home
+</a>
+
+<div class="md-subhead">
+    <h2>
+        Some fields:
+    </h2>
+    <p>
+        Telephone: {{$ctrl.phone}}
+    </p>
+    <p>
+        Email: {{$ctrl.email}}
+    </p>
+</div>
+<form novalidate ng-submit="$ctrl.onSubmit($event)" name="userForm">
+    <md-content>
+        <md-tabs md-selected="$ctrl.selectedIndex">
+            <md-tab label="Tab One">
+            <md-input-container>
+                    <label>Email</label>
+                    <input name="email" type="email" ng-model="$ctrl.email" required>
+                    <div ng-messages="userForm.email.$error" ng-show="userForm.email.$dirty">
+                    <div ng-message="required">This is required!</div>
+                    <div ng-message="email">Please give a valid email</div>
+                    </div>
+                </md-input-container>
+            </md-tab>
+            <md-tab label="Tab Two">
+                <md-input-container>
+                    <label>Telephone</label>
+                    <input name="phone" ng-model="$ctrl.phone"  ng-maxlength="10" required>
+                    <div ng-messages="userForm.phone.$error" ng-show="userForm.phone.$dirty">
+                        <div ng-message="required">This is required!</div>
+                        <div ng-message="md-maxlength">That's too long!</div>
+                    </div>
+                </md-input-container>
+            </md-tab>
+        </md-tabs>
+        <div class="center">This way ↓</div>
+    </md-content>
+    <input type="submit" value="Submit" class="md-button md-warn md-raised">
+</form>
