@@ -9,7 +9,6 @@ angularjs-ts-webpack-bundle has been built by heart and contains many advantages
 
 # How to start
 
-Rename `src/h.taccess` to `.htaccess`
 
 ```sh
 $ git clone https://github.com/paladdins/angularjs-ts-webpack-bundle
