@@ -18,7 +18,9 @@ import './sass/main.scss';
 import { TestAppModule } from './app/app.module';
 
 // get static files to deploy to prod bundle
-require("static-loader?!./.htaccess?output=.htaccess");
+
+// Uncomment and rename h.taccess to .htaccess if you use Apache
+// require("static-loader?!./.htaccess?output=.htaccess");
 
 export interface IComponentState extends ng.ui.IState {
   state: string;
