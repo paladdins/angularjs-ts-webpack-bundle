@@ -13,6 +13,10 @@ export class HttpBookService {
 
     private resource: any;
 
+        
+    // Injecting static
+    static $inject = ["$resource"];
+
     constructor($resource: any ){
         this.resource = $resource;
     }

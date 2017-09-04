@@ -5,6 +5,10 @@ import { Injectable } from 'angular-ts-decorators';
 @Injectable('HttpErrHandler')
 export class HttpErrHandler {
 
+    
+    // Injecting static
+    static $inject = ["$state"];
+
     constructor(private $state: ng.ui.IStateService) {}
 
     public handleErr(errN: number) {

@@ -4,18 +4,11 @@ const commonConfig = require('./webpack.common.js');
 
 // webpack plugins
 const WebpackMd5Hash = require('webpack-md5-hash');
-const DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 
 
 module.exports = webpackMerge(commonConfig, {
 
-  /**
-   * Disable debug mode for production.
-   *
-   * See: http://webpack.github.io/docs/configuration.html#debug
-   */
-  debug: false,
 
   /**
    * Developer tool to enhance debugging.
@@ -83,16 +76,6 @@ module.exports = webpackMerge(commonConfig, {
      * See: https://www.npmjs.com/package/webpack-md5-hash
      */
     new WebpackMd5Hash(),
-
-    /**
-     * Plugin: DedupePlugin
-     * Description: Prevents the inclusion of duplicate code into your bundle
-     * and instead applies a copy of the function at runtime.
-     *
-     * See: https://webpack.github.io/docs/list-of-plugins.html#defineplugin
-     * See: https://github.com/webpack/docs/wiki/optimization#deduplication
-     */
-    new DedupePlugin(),
 
     /**
      * Plugin: UglifyJsPlugin

@@ -16,9 +16,9 @@ export const routes: IComponentState[] = [
         url: '/booklist', 
         component: 'bookList',
         resolve: {
-            books: (
-                    HttpBookService: HttpBookService, 
+            books: [ '$state', (
                     $state: ng.ui.IStateService,
+                    HttpBookService: HttpBookService, 
                     HttpErrHandler: HttpErrHandler
             ) => {
                     return HttpBookService.getBooksList().query((data: any) => {
@@ -26,7 +26,7 @@ export const routes: IComponentState[] = [
                     }, (error: any) => {
                         HttpErrHandler.handleErr(error.status)
                     })
-            }
+            }]
        }
     },
     { 
@@ -35,10 +35,10 @@ export const routes: IComponentState[] = [
         url: '/book-detail/:id', 
         component: 'book',
         resolve: {
-            book: (
-                HttpBookService: HttpBookService, 
+            book: [ '$stateParams', '$state', (
                 $stateParams: ng.ui.IStateParamsService, 
                 $state: ng.ui.IStateService,
+                HttpBookService: HttpBookService, 
                 HttpErrHandler: HttpErrHandler
              ) => {
                 return HttpBookService.getBookDetail().get({id: $stateParams.id}, (data: any) => {
@@ -46,11 +46,11 @@ export const routes: IComponentState[] = [
                 }, (error: any) => {
                     HttpErrHandler.handleErr(error.status)
                 })
-            },
-            bundles: (
-                HttpBookService: HttpBookService, 
+            }],
+            bundles: [ '$stateParams', '$state', (
                 $stateParams: ng.ui.IStateParamsService, 
                 $state: ng.ui.IStateService,
+                HttpBookService: HttpBookService, 
                 HttpErrHandler: HttpErrHandler
             ) => {
                 return HttpBookService.getBundleDetail().query({id: $stateParams.id}, (data: any) => {
@@ -58,7 +58,7 @@ export const routes: IComponentState[] = [
                 }, (error: any) => {
                     HttpErrHandler.handleErr(error.status)
                 })
-            }
+            }]
        }
     },
     { 
@@ -73,9 +73,9 @@ export const routes: IComponentState[] = [
         url: '/error/:err', 
         component: 'notFound',
         resolve: {
-            errNumber: ($stateParams: ng.ui.IStateParamsService): number => {
+            errNumber: [ '$stateParams', ($stateParams: ng.ui.IStateParamsService): number => {
                 return $stateParams.err;
-            }
+            }]
         }
     }
 ];

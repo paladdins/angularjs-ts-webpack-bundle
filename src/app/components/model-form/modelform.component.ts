@@ -16,6 +16,9 @@ export class ModelForm {
   @Input('=') email: string;
 
   public selectedIndex: number;
+
+  // Injecting static
+  static $inject = ["$location", "$anchorScroll"];
   
   constructor(private $location: ng.ILocationService, 
     private $anchorScroll: ng.IAnchorScrollService) {

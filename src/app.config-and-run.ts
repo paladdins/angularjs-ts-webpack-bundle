@@ -7,7 +7,7 @@ interface AppRootScope extends ng.IRootScopeService {
 }
 
 // Angular app config
-export const config = (
+ let config =  (
         $urlRouterProvider: ng.ui.IUrlRouterProvider,
         $stateProvider: ng.ui.IStateProvider,
         $locationProvider: any,
@@ -19,8 +19,18 @@ export const config = (
     $resourceProvider.defaults.stripTrailingSlashes = false;
 }
 
+
+config.$inject = [
+    '$urlRouterProvider',
+    '$stateProvider',
+    '$locationProvider',
+    '$resourceProvider',
+]
+
+
+
 // Angular app run
-export const run = (
+let run = (
             $window: ng.IWindowService, 
             $q: ng.IQService,
             $rootScope: AppRootScope,
@@ -32,6 +42,13 @@ export const run = (
 
 }
 
+run.$inject = [
+    '$window',
+    '$q',
+    '$rootScope',
+    '$state'
+]
+
 function provideStates(states: IComponentState[], $stateProvider: ng.ui.IStateProvider) {
     states.map((config) => {
     const name = config.state;
@@ -40,3 +57,6 @@ function provideStates(states: IComponentState[], $stateProvider: ng.ui.IStatePr
     return {name, config};
     }).forEach(state => $stateProvider.state(state.name, state.config));
 }
+
+
+export {config, run};
