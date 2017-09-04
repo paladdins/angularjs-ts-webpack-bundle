@@ -16,7 +16,7 @@ export const routes: IComponentState[] = [
         url: '/booklist', 
         component: 'bookList',
         resolve: {
-            books: [ '$state', (
+            books: [ '$state', 'HttpBookService', 'HttpErrHandler', (
                     $state: ng.ui.IStateService,
                     HttpBookService: HttpBookService, 
                     HttpErrHandler: HttpErrHandler
@@ -35,7 +35,7 @@ export const routes: IComponentState[] = [
         url: '/book-detail/:id', 
         component: 'book',
         resolve: {
-            book: [ '$stateParams', '$state', (
+            book: [ '$stateParams', '$state', 'HttpBookService', 'HttpErrHandler', (
                 $stateParams: ng.ui.IStateParamsService, 
                 $state: ng.ui.IStateService,
                 HttpBookService: HttpBookService, 
@@ -47,7 +47,7 @@ export const routes: IComponentState[] = [
                     HttpErrHandler.handleErr(error.status)
                 })
             }],
-            bundles: [ '$stateParams', '$state', (
+            bundles: [ '$stateParams', '$state', 'HttpBookService', 'HttpErrHandler', (
                 $stateParams: ng.ui.IStateParamsService, 
                 $state: ng.ui.IStateService,
                 HttpBookService: HttpBookService, 
