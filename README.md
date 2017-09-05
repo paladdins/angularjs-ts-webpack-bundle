@@ -33,11 +33,6 @@ And to build complete minified production:
 $ npm run-script build:production
 ```
 
-# If your OS is not a Windows
-
-You must go to `package.json` and replace scripts' commands `set` to `export` 
-to avoid compilation errors
-
 # Learn about angular-ts-decorators before you start developing
 
  - Go to the [angularjs-ts-decorators](https://github.com/paladdins/angularjs-ts-decorators/)
