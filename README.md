@@ -1,6 +1,6 @@
 # angularjs-ts-webpack-bundle
 
-angularjs-ts-webpack-bundle has been built by heart and contains many advantages of symbiosis of cool web extensions:
+angularjs-ts-webpack-bundle contains many advantages of symbiosis of cool web extensions:
 
   - AngularJS Framework
   - TypeScript language
