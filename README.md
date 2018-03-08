@@ -33,11 +33,11 @@ And to build complete minified production:
 $ npm run-script build:production
 ```
 
-# Learn about angular-ts-decorators before you start developing
+# Learn about angular-ts-decorators before you start development
 
  - Go to the [angularjs-ts-decorators](https://github.com/paladdins/angularjs-ts-decorators/)
 
-# Development
+
 # App config and run
 
  - If you want to change `config` or `run` parameters of the AngularJS app you should go `src/app.config-and-run.ts`
@@ -46,7 +46,7 @@ $ npm run-script build:production
 
  - angularjs-ts-decorators uses ui-router for routes managment and all routes take place in `src/app/app.routes.ts`
 
-# Developing components
+# Development components
 
 There is structure similar to Angular 2
 If you want to add new component :
